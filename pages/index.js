@@ -6,13 +6,17 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import CodeIcon from '@material-ui/icons/Code';
+import IconButton from '@material-ui/core/IconButton';
 import styles from '../styles/Home.module.css'
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
     <div className={styles.homepage}>
       <Head>
         <title>Mrisho Lukamba</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet"></link>
       </Head>
@@ -29,7 +33,16 @@ export default function Home() {
         <Brief/>
       </main>
       <footer className={styles.footer}>
-
+        <div className={styles.iconsDiv}>
+          <span> connect with me</span>
+          <div className={styles.icons}>
+            <IconButton><LinkedInIcon style={{color:"white"}}/></IconButton>
+            <IconButton><TwitterIcon style={{color:"white"}}/></IconButton>
+            <IconButton><FacebookIcon style={{color:"white"}}/></IconButton>
+            <IconButton><InstagramIcon style={{color:"white"}}/></IconButton>
+            <IconButton><CodeIcon style={{color:"white"}}/></IconButton>
+          </div>
+        </div>
       </footer>
     </div>
   )
