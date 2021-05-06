@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Brief from '../Component/Brief'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -34,9 +33,37 @@ export default function Home() {
         <Image  objectFit='cover'  layout='intrinsic' objectPosition='100% 15%' width={1000} height={500} src='/lukawhiteright.jpg' alt='lukamba'/>
       </picture>
       <main className={styles.main}>
-        <Brief/>
-        <Brief/>
-        <Brief/>
+        
+        <div className={styles.brief}>
+            <div className={styles.mainIconDiv}>
+              <img src='/webIcon.png' alt=''></img> 
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+
+        <div className={styles.brief}>
+            <div className={styles.mainIconDiv}>
+              <img src='/blockchain.png' alt=''></img> 
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+
+        <div className={styles.brief}>
+            <div className={styles.mainIconDiv}>
+              <img src='/techguy.png' alt=''></img> 
+            </div>
+
+            <div>
+
+            </div>
+        </div>
+
       </main>
       <footer className={styles.footer}>
         <div className={styles.iconsDiv}>
@@ -51,10 +78,11 @@ export default function Home() {
 
           <div className={styles.partner}>
           <span>In partnership with</span>
-          <h3>Let Us Welcome you in Tanzania</h3>
+          <h3> </h3>
           <img src='/marbles.jpg' alt='marblestours and safari'/>
           <a href="https://www.marblestours.co.tz/" target="_blank">MARBLESTOURS AND SAFARI</a>
-          
+          <h4>All rights reserved</h4>
+          <h4>Copyright © 2021 Mrisho Lukamba</h4>
         </div>
 
         </div>

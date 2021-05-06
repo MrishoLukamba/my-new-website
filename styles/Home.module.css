@@ -53,8 +53,8 @@
   background-color:white;
 }
 .brief{
-    background-color:rgba(225,225,255,0.3);
-    backdrop-filter:blur(100px);
+    background-color:rgba(225,225,255,0.2);
+    backdrop-filter:blur(30px);
     width: 330px;
     max-width:450px;
     min-width:300px;
@@ -64,6 +64,7 @@
     box-sizing: border-box;
     overflow: hidden;
     z-index: 1;
+    border-radius: 5px;
 }
 
 .picture{
@@ -83,7 +84,8 @@
   display: flex;
   flex-direction: row;
   width: 100vw;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
   background: url('../public/backk.jpg');
   object-fit:cover;
   background-position: center;
@@ -121,6 +123,13 @@
   font-family:'Dancing Script', cursive;
   font-weight: 400;
   font-size:1.2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding:5px;
+  border-bottom: 2px solid white;
+  margin-bottom: 15px;
 }
 .partner > h3{
   color:whitesmoke;
@@ -128,14 +137,21 @@
   font-weight: 400;
   font-size: 1.15rem;
 }
+.partner> h4{
+  color: white;
+  font-family: sans-serif;
+  font-weight: 400;
+}
 .partner > a{
   color:darkkhaki;
   font-weight: 700;
+  padding-bottom: 20px;
 }
 .partner > img{
   width: 90px;
   height: 90px;
   background-color: black;
+  
 }
 .iconsDiv > span{
   color:  white;
@@ -153,6 +169,13 @@
   width: 100%;
   background-color: transparent;
   margin-bottom: 10px;
+}
+
+.mainIconDiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 @media (max-width:1000px)  {
   .button{
