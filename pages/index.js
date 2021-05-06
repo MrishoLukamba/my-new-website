@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import {useState} from 'react'
 import Image from 'next/image'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
@@ -8,8 +9,16 @@ import CodeIcon from '@material-ui/icons/Code';
 import IconButton from '@material-ui/core/IconButton';
 import styles from '../styles/Home.module.css'
 import { motion } from "framer-motion"
+import Switch from '@material-ui/core/Switch';
 
 export default function Home() {
+  const [on, setOn] = useState(false);
+
+  const handleChange =()=>{
+    on?setOn(false) : setOn(true);
+  }
+
+  console.log(on)
   const linkedin = "https://www.linkedin.com/in/mrisho-lukamba-20ba841b6/"
   const ig= "https://www.instagram.com/mrisholukamba/"
   const twitter = "https://twitter.com/LukambaMrisho"
@@ -20,27 +29,39 @@ export default function Home() {
       <Head>
         <title>Mrisho Lukamba</title>
         <meta name='keyword' content='blockchain, web developer, investor, portfolio'></meta>
-        <link rel="preconnect" href="https://fonts.gstatic.com"/>
-        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet"></link>
+    
         <link rel="preconnect" href="https://fonts.gstatic.com"></link>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></link>
+        
       </Head>
-      <div className={styles.nav}>
+      <div style={{backgroundColor:on===false?'white':'rgba(0, 0, 0, 0.904)'}} className={styles.nav}>
         <img  className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/>
-        <button className={styles.button}>Discover</button>
+
+        <Switch
+        onClick={handleChange}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
+        />
+        <button style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
       </div>
       <picture className={styles.picture}>
         <Image  objectFit='cover'  layout='intrinsic' objectPosition='100% 15%' width={1000} height={500} src='/lukawhiteright.jpg' alt='lukamba'/>
       </picture>
-      <main className={styles.main}>
+      <main style={{backgroundColor:on===false?'white':'black'}} className={styles.main}>
         
         <div className={styles.brief}>
             <div className={styles.mainIconDiv}>
               <img src='/webIcon.png' alt=''></img> 
             </div>
+             
+            <div className={styles.icondetails}>
+            <p>Building modern and responsive Web Application
+               ranging from Portfolios, Directory and Contact pages,
+               Online stores to E-commerce websites
 
-            <div>
-
+             </p>
+             <button className={styles.buttonIcon}>Learn more</button>
             </div>
         </div>
 
@@ -49,8 +70,13 @@ export default function Home() {
               <img src='/blockchain.png' alt=''></img> 
             </div>
 
-            <div>
+            <div className={styles.icondetails}>
+            <p>Building modern and responsive Web Application
+               ranging from Portfolios, Directory and Contact pages,
+               Online stores to E-commerce websites
 
+             </p>
+             <button className={styles.buttonIcon}>Learn more</button>
             </div>
         </div>
 
@@ -59,8 +85,13 @@ export default function Home() {
               <img src='/techguy.png' alt=''></img> 
             </div>
 
-            <div>
+            <div className={styles.icondetails}>
+            <p>Building modern and responsive Web Application
+               ranging from Portfolios, Directory and Contact pages,
+               Online stores to E-commerce websites
 
+             </p>
+             <button className={styles.buttonIcon}>Learn more</button>
             </div>
         </div>
 
