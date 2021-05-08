@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/Link'
 import {useState} from 'react'
 import Image from 'next/image'
 import TwitterIcon from '@material-ui/icons/Twitter';
@@ -36,15 +37,16 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></link>
         
       </Head>
-      <div style={{backgroundColor:on===false?'white':'rgba(0, 0, 0, 0.904)'}} className={styles.nav}>
+      <header style={{backgroundColor:on===false?'white':'rgba(0, 0, 0, 0.904)'}} className={styles.nav}>
         <img  className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/>
 
         <Switch
         onClick={handleChange}
-        inputProps={{ 'aria-label': 'primary checkbox' }}
+        color="primary"
+        inputProps={{ 'aria-label': 'secondary checkbox' }}
         />
-        <button style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
-      </div>
+        <button style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}><Link href='/discover'>Discover</Link></button>
+      </header>
       <picture className={styles.picture}>
         <Image  objectFit='cover'  layout='intrinsic' objectPosition='100% 15%' width={1000} height={500} src='/lukawhiteright.jpg' alt='lukamba'/>
       </picture>
