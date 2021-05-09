@@ -10,9 +10,12 @@ import CodeIcon from '@material-ui/icons/Code';
 import IconButton from '@material-ui/core/IconButton';
 import styles from '../styles/Home.module.css'
 import { motion } from "framer-motion"
+import { useRouter } from 'next/router'
+import GitHubIcon from '@material-ui/icons/GitHub';
 import Switch from '@material-ui/core/Switch';
 
 export default function Home() {
+  const router = useRouter()
   const [on, setOn] = useState(false);
 
   const handleChange =()=>{
@@ -22,17 +25,19 @@ export default function Home() {
   console.log(on)
   const linkedin = "https://www.linkedin.com/in/mrisho-lukamba-20ba841b6/"
   const ig= "https://www.instagram.com/mrisholukamba/"
+  const github = "https://github.com/MrishoLukamba/"
   const twitter = "https://twitter.com/LukambaMrisho"
   const fb="https://www.facebook.com/abdulrazaq.lukamba/"
   const dev = "https://dev.to/mrisholukamba"
   return (
+
     <div className={styles.homepage}>
       <Head>
         <title>Mrisho Lukamba</title>
         <meta name='keyword' content='blockchain, web developer, investor, portfolio'></meta>
     
-        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"/>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></link>
         <link rel="preconnect" href="https://fonts.gstatic.com"/>
         <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></link>
         
@@ -45,7 +50,7 @@ export default function Home() {
         color="primary"
         inputProps={{ 'aria-label': 'secondary checkbox' }}
         />
-        <button style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}><Link href='/discover'>Discover</Link></button>
+        <button onClick={()=> router.push("/discover")} style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
       </header>
       <picture className={styles.picture}>
         <Image  objectFit='cover'  layout='intrinsic' objectPosition='100% 15%' width={1000} height={500} src='/lukawhiteright.jpg' alt='lukamba'/>
@@ -73,9 +78,8 @@ export default function Home() {
             </div>
 
             <div className={styles.icondetails}>
-            <p>Building modern and responsive Web Application
-               ranging from Portfolios, Directory and Contact pages,
-               Online stores to E-commerce websites
+            <p>Crypto trader and investor. Blockchain technology enthusiast,
+              enhancing existing technology.
 
              </p>
              <button className={styles.buttonIcon}>Learn more</button>
@@ -88,9 +92,8 @@ export default function Home() {
             </div>
 
             <div className={styles.icondetails}>
-            <p>Building modern and responsive Web Application
-               ranging from Portfolios, Directory and Contact pages,
-               Online stores to E-commerce websites
+            <p>Programming languages tutor, Data structures and Algorithm 
+              in Python and Javascript.
 
              </p>
              <button className={styles.buttonIcon}>Learn more</button>
@@ -104,6 +107,7 @@ export default function Home() {
           <div className={styles.icons}>
             <a target="_blank" href={linkedin}><IconButton><LinkedInIcon style={{color:"white"}}/></IconButton></a>
             <a target="_blank" href={twitter}><IconButton><TwitterIcon style={{color:"white"}}/></IconButton></a>
+            <a target="_blank" href={github}><IconButton><GitHubIcon style={{color:"white"}}/></IconButton></a>
             <a target="_blank" href={fb}><IconButton><FacebookIcon style={{color:"white"}}/></IconButton></a>
             <a target="_blank" href={ig}><IconButton><InstagramIcon style={{color:"white"}}/></IconButton></a>
             <a target="_blank" href={dev}><IconButton><CodeIcon style={{color:"white"}}/></IconButton></a>

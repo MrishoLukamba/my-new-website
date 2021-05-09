@@ -1,12 +1,13 @@
 import React from 'react'
-import Link from 'next/Link';
+import { useRouter } from 'next/router'
 import styles from '../styles/Home.module.css'
 
 function discover() {
+    const router = useRouter();
     return (
         <div className={styles.homepage}>
         <header  className={styles.nav}>
-            <Link href='/'><img  className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/></Link>
+            <img onClick={()=> router.push("/")} className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/>
 
       </header>
         </div>
