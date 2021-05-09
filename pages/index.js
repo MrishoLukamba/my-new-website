@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Link from 'next/Link'
 import {useState} from 'react'
 import Image from 'next/image'
 import TwitterIcon from '@material-ui/icons/Twitter';
