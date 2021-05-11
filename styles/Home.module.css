@@ -11,7 +11,7 @@
 }
 .nav{
   display: flex;
-  position: -webkit-sticky;
+  position: sticky;
   justify-content:space-between;
   align-items: center;
   width: 100vw;
@@ -23,18 +23,18 @@
   box-shadow: 3px 1.7px rgba(225,225,225,0.5);
 }
 .button{
-  padding: 8px 25px;
+  padding: 5px 20px;
   outline-width: 0;
-  border: 2px solid red;
+  border: 1.5px solid red;
   background: transparent;
   color: rgb(1, 1, 26);
   font-size: 1.2em;
-  border-radius: 3px;
+  border-radius: 20px;
   font-weight:400;
   font-family: 'Playfair Display', serif;
 }
 .button:hover{
-  background-color:rgb(243, 18, 18);
+  background-color:rgb(255, 40, 40);
   color: white;
   border: none
 }
@@ -213,7 +213,7 @@
 }
 @media (max-width:1000px)  {
   .button{
-    padding: 10px 20px;
+    padding: 5px 20px;
   }
   .nav{
     padding-right: 15px;
