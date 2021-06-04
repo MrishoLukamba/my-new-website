@@ -104,6 +104,7 @@
   min-height: 300px;
   height: auto;
   background: url('../public/backk.jpg');
+  background-color: black;
   object-fit:cover;
   background-position: center;
   box-sizing: border-box;
