@@ -18,6 +18,7 @@ import ClipLoader from "react-spinners/ClipLoader";
 export default function Home() {
   const router = useRouter()
   const [on, setOn] = useState(false);
+  const [scroll, setScroll] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,14 +32,17 @@ export default function Home() {
   const handleChange =()=>{
     on?setOn(false) : setOn(true);
   }
+  const handleScroll =()=>{
+    scroll ? setScroll(false) : setScroll(true);
+  }
 
-  console.log(on)
+  console.log(scroll)
   const linkedin = "https://www.linkedin.com/in/mrisho-lukamba-20ba841b6/"
   const ig= "https://www.instagram.com/mrisholukamba/"
   const github = "https://github.com/MrishoLukamba/"
   const twitter = "https://twitter.com/LukambaMrisho"
-  const fb="https://www.facebook.com/abdulrazaq.lukamba/"
-  const dev = "https://dev.to/mrisholukamba"
+  
+  
   return (
 
          <div className={styles.homepage}>
@@ -79,11 +83,11 @@ export default function Home() {
               <button onClick={()=> router.push("/discover")} style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
             </header>
             <picture className={styles.picture}>
-              <Image  objectFit='cover'  layout='intrinsic' objectPosition='100% 15%' width={1000} height={500} src='/lukawhiteright.jpg' alt='lukamba'/>
+              <Image  objectFit='cover'  layout='intrinsic' objectPosition='50% 23%' width={700} height={360} src='/lukawhiteright.jpg' alt='lukamba'/>
             </picture>
             <main style={{backgroundColor:on===false?'white':'black'}} className={styles.main}>
               
-              <div className={styles.brief}>
+              <section className={styles.brief}>
                   <div className={styles.mainIconDiv}>
                     <img src='/webIcon.png' alt=''></img> 
                   </div>
@@ -96,9 +100,9 @@ export default function Home() {
                   </p>
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
-              </div>
+              </section>
 
-              <div className={styles.brief}>
+              <section className={styles.brief}>
                   <div className={styles.mainIconDiv}>
                     <img src='/blockchain.png' alt=''></img> 
                   </div>
@@ -110,9 +114,9 @@ export default function Home() {
                   </p>
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
-              </div>
+              </section>
 
-              <div className={styles.brief}>
+              <section className={styles.brief}>
                   <div className={styles.mainIconDiv}>
                     <img src='/techguy.png' alt=''></img> 
                   </div>
@@ -124,33 +128,46 @@ export default function Home() {
                   </p>
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
-              </div>
+              </section>
 
             </main>
-            <footer className={styles.footer}>
-              <div className={styles.iconsDiv}>
-                <span> connect with me</span>
+            <footer  className={styles.footer}>
+            
+           <section className={styles.footerContent1}>
                 <div className={styles.icons}>
-                  <a target="_blank" href={linkedin}><IconButton><LinkedInIcon style={{color:"white"}}/></IconButton></a>
-                  <a target="_blank" href={twitter}><IconButton><TwitterIcon style={{color:"white"}}/></IconButton></a>
-                  <a target="_blank" href={github}><IconButton><GitHubIcon style={{color:"white"}}/></IconButton></a>
-                  <a target="_blank" href={fb}><IconButton><FacebookIcon style={{color:"white"}}/></IconButton></a>
-                  <a target="_blank" href={ig}><IconButton><InstagramIcon style={{color:"white"}}/></IconButton></a>
-                  <a target="_blank" href={dev}><IconButton><CodeIcon style={{color:"white"}}/></IconButton></a>
+                        <a target="_blank" href={linkedin}><IconButton><LinkedInIcon style={{color:"white", fontSize:20}}/></IconButton></a>
+                        <a target="_blank" href={twitter}><IconButton><TwitterIcon style={{color:"white", fontSize:20}}/></IconButton></a>
+                        <a target="_blank" href={github}><IconButton><GitHubIcon style={{color:"white", fontSize:20}}/></IconButton></a>
+                        
+                        <a target="_blank" href={ig}><IconButton><InstagramIcon style={{color:"white", fontSize:20}}/></IconButton></a>
+                        
+                  </div>
+
+                  <div className={styles.partner}>
+                
+                    <span>Visit Tanzania</span>
+                    <a href="https://www.marblestours.co.tz/" target="_blank">MARBLESTOURS AND SAFARI</a>
+                
+                  </div>
+           </section>
+           
+              
+                <div className={styles.emailDiv}>
+                  <form>
+                    <input className={styles.inputEmail} placeholder='site in development..'></input>
+                    <input className={styles.emailBtn} type='submit'value='Be Updated!'></input>
+                  </form>
                 </div>
+                
 
-                <div className={styles.partner}>
-                <span>In partnership with</span>
-                <h3> </h3>
-                <img src='/marbles.jpg' alt='marblestours and safari'/>
-                <a href="https://www.marblestours.co.tz/" target="_blank">MARBLESTOURS AND SAFARI</a>
-                <h4>All rights reserved</h4>
-                <h4>Copyright © 2021 Mrisho Lukamba</h4>
-              </div>
+              
 
-              </div>
+            
 
-
+            <div className={styles.footerfoot}>
+               
+                <span>Copyright © 2021 Mrisho Lukamba</span>
+            </div>
           </footer>
           </div>
           )

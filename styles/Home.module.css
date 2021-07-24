@@ -49,7 +49,7 @@
   font-family: 'Playfair Display', serif;
 }
 .button:hover{
-  background-color:rgb(255, 40, 40);
+  
   color: white;
   border: none
 }
@@ -86,30 +86,79 @@
 
 .picture{
   width: 100%;
-  height: 550px;
+  height: auto;
+  padding: 25px;
   display: flex;
   object-fit: cover;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   z-index: 2;
-  border:none;
+  border: none;
   background: transparent;
 }
 
 .footer{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
+  
+  position: relative;
+  padding-right: 20px;
+  height: 250px;
+  background-image: linear-gradient(to right, rgb(1, 0, 10),rgb(54, 54, 78));
   width: 100vw;
-  min-height: 300px;
-  height: auto;
-  background: url('../public/backk.jpg');
-  background-color: black;
-  object-fit:cover;
-  background-position: center;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  
+  
+}
+.footerContent1{
+  width: 100%;
+  margin-bottom:25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.footerfoot{
+  height: 40px;
+  display:flex;
+  align-items: center;
+  justify-content:center;
+  position: absolute;
+  bottom:0;
   box-sizing: border-box;
+  width: 100%;
+  background-color:rgba(1, 0, 12, 0.801);
+}
+
+
+
+.emailDiv{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inputEmail {
+  padding:10px 30px;
+  border: none;
+  outline-width: 0;
+  background-color:white;
+  
+}
+.emailBtn{
+  padding: 10px 10px;
+  background:black;
+  color: white;
   border: none;
 }
+
+
+
 .img{
   margin-top: 5px;
   width: 100px;
@@ -127,68 +176,50 @@
   max-height: 100%;
   padding: 5px;
   box-sizing: border-box;
-  background-color:black;
-  opacity: 0.6;
+  background-color:transparent;
+  
 }
 
 .partner{
   display: flex;
   flex-direction: column;
   align-items: center;
+  float: right;
 }
 .partner > span{
   color:white;
   font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-weight: 300;
-  font-size:1rem;
-  width: 100%;
+  font-size:0.8rem;
+  width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   padding:5px;
-  border-bottom: 2px solid white;
-  margin-bottom: 15px;
+  
+  
 
   
 }
-.partner > h3{
-  color:whitesmoke;
-  font-family: sans-serif;
-  font-weight: 400;
-  font-size: 1.15rem;
-}
-.partner> h4{
-  color: white;
-  font-family: sans-serif;
-  font-weight: 400;
-}
+
+
 .partner > a{
-  color:darkkhaki;
-  font-weight: 700;
+  color:rgb(231, 227, 173);
+  font-weight: 500;
   padding-bottom: 20px;
+  font-size:0.8em;
 }
-.partner > img{
-  width: 90px;
-  height: 90px;
-  background-color: black;
+
   
-}
-.iconsDiv > span{
-  color:  white;
-  font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-weight: 300;
-  font-size:1rem;
-  
-}
+
+
 .icons{
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: text-center;
   box-sizing: border-box;
   height: auto;
-  width: 100%;
+  width: 40%;
   background-color: transparent;
-  margin-bottom: 10px;
 }
 
 .mainIconDiv{
@@ -243,6 +274,9 @@
   }
 }
 @media (max-width:600px){
+  .footer{
+    padding-right: 5px;
+  }
   .nav >h2{
     font-size: 1em;
   }

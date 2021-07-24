@@ -15,6 +15,11 @@ body::-webkit-scrollbar-thumb{
 body::-webkit-scrollbarX{
   display: none;
 }
+span{
+  color: white;
+  font-weight: 400;
+  font-size:1em;
+}
 
 a {
   color: inherit;
