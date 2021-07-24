@@ -108,8 +108,8 @@ export default function Home() {
                   </div>
 
                   <div className={styles.icondetails}>
-                  <p>Crypto trader and investor. Blockchain technology enthusiast,
-                    enhancing existing technology.
+                  <p>Smart Contracts and Blockchain Technologies.
+                    Diving into Future. 
 
                   </p>
                   <button className={styles.buttonIcon}>Learn more</button>
@@ -166,7 +166,7 @@ export default function Home() {
 
             <div className={styles.footerfoot}>
                
-                <span>Copyright © 2021 Mrisho Lukamba</span>
+                <span>© 2021 Mrisho Lukamba</span>
             </div>
           </footer>
           </div>
