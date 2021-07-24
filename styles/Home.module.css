@@ -144,13 +144,17 @@
   align-items: center;
 }
 .inputEmail {
-  padding:10px 30px;
+  width: 15em;
+  box-sizing: border-box;
+  height: 3em;
   border: none;
   background-color:white;
   
 }
 .emailBtn{
-  padding: 10px 10px;
+  width: 8em;
+  height: 3em;
+  box-sizing: border-box;
   background:black;
   color: white;
   border: none;
