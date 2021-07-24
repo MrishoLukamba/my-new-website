@@ -149,6 +149,7 @@
   height: 3em;
   border: none;
   background-color:white;
+  border-radius: 0;
   
 }
 .emailBtn{
@@ -157,6 +158,7 @@
   box-sizing: border-box;
   background:black;
   color: white;
+  border-radius: 0;
   border: none;
 }
 
