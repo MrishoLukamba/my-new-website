@@ -3,16 +3,14 @@ import {useState, useEffect} from 'react'
 import Image from 'next/image'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import CodeIcon from '@material-ui/icons/Code';
 import IconButton from '@material-ui/core/IconButton';
 import styles from '../styles/Home.module.css'
-import { motion } from "framer-motion"
 import { useRouter } from 'next/router'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Switch from '@material-ui/core/Switch';
 import ClipLoader from "react-spinners/ClipLoader";
+import Typist from 'react-typist';
 
 
 export default function Home() {
@@ -93,11 +91,13 @@ export default function Home() {
                   </div>
                   
                   <div className={styles.icondetails}>
-                  <p>Building modern and responsive Web Application
-                    ranging from Portfolios, Directory and Contact pages,
-                    Online stores to E-commerce websites
+                    <Typist>
+                        <p>Building modern and responsive Web Application
+                          ranging from Portfolios, Directory and Contact pages,
+                          Online stores to E-commerce websites
 
-                  </p>
+                        </p>
+                    </Typist>
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
               </section>
@@ -108,10 +108,12 @@ export default function Home() {
                   </div>
 
                   <div className={styles.icondetails}>
-                  <p>Smart Contracts and Blockchain Technologies.
-                    Diving into Future. 
+                    <Typist>
+                        <p>Smart Contracts and Blockchain Technologies.
+                          Diving into Future. 
 
-                  </p>
+                        </p>
+                  </Typist>
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
               </section>
@@ -122,10 +124,12 @@ export default function Home() {
                   </div>
 
                   <div className={styles.icondetails}>
-                  <p>Programming languages tutor, Data structures and Algorithm 
-                    in Python and Javascript.
+                    <Typist>
+                        <p>Programming languages tutor, Data structures and Algorithm 
+                          in Python and Javascript.
 
-                  </p>
+                        </p>
+                  </Typist>
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
               </section>

@@ -1,5 +1,5 @@
 {
-  "name": "mrisho-web",
+  "name": "Mrisho-Lukamba",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,10 +10,10 @@
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
-    "framer-motion": "^4.1.11",
-    "next": "^10.2.0",
-    "react": "17.0.2",
+    "next": "^11.0.1",
+    "react": "^17.0.2",
     "react-dom": "17.0.2",
-    "react-spinners": "^0.11.0"
+    "react-spinners": "^0.11.0",
+    "react-typist": "^2.0.5"
   }
 }
