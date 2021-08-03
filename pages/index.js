@@ -155,7 +155,7 @@ export default function Home() {
                 <div className={styles.emailDiv}>
                   <form>
                     <input className={styles.inputEmail} placeholder='site in development..'></input>
-                    <input className={styles.emailBtn} type='submit'value='Be Updated!'></input>
+                    <button className={styles.emailBtn} type='submit'>Be Updated!</button>
                   </form>
                 </div>
                 
