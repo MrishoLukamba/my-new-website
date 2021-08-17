@@ -11,36 +11,54 @@ import GitHubIcon from '@material-ui/icons/GitHub';
 import Switch from '@material-ui/core/Switch';
 import ClipLoader from "react-spinners/ClipLoader";
 import Typist from 'react-typist';
-
+import Marquee from "react-fast-marquee";
+import axios from 'axios';
+import Crypto from '../Component/crypto';
 
 export default function Home() {
   const router = useRouter()
+  const [crypto, setCrypto] = useState([])
   const [on, setOn] = useState(false);
-  const [scroll, setScroll] = useState(false);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setTimeout(()=>{
-      setLoading(false)
-    },1000)
-   
-    
-  }, [])
+  
 
   const handleChange =()=>{
     on?setOn(false) : setOn(true);
   }
-  const handleScroll =()=>{
-    scroll ? setScroll(false) : setScroll(true);
-  }
+  
 
-  console.log(scroll)
+  
   const linkedin = "https://www.linkedin.com/in/mrisho-lukamba-20ba841b6/"
   const ig= "https://www.instagram.com/mrisholukamba/"
   const github = "https://github.com/MrishoLukamba/"
   const twitter = "https://twitter.com/LukambaMrisho"
   
-  
+  const formatCash = n => {
+    if (n < 1e3) return n;
+    if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
+    if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1) + "M";
+    if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1) + "B";
+    if (n >= 1e12) return +(n / 1e12).toFixed(1) + "T";
+  };
+
+ 
+
+ useEffect(() => {
+  async function getCrypto(prop){
+    axios.get(`https://api.lunarcrush.com/v2?data=assets&key=k9yd7nh8uanli0elxaemt&symbol=${prop}`).then((response) => {
+    const details = response.data.data[0]
+    const [symbol,price,mCap] = [details.symbol,details.price, details.market_cap]
+    const result = {name:symbol,price:(price).toFixed(2), market_cap:formatCash(mCap)};
+    setCrypto((prev)=>[...prev,result])
+    });
+  }
+  getCrypto("BTC")
+  getCrypto("DOT")
+  getCrypto("ETH")
+  getCrypto("ADA")
+
+  }, []);
+
+  console.log(crypto)
   return (
 
          <div className={styles.homepage}>
@@ -54,22 +72,10 @@ export default function Home() {
             <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet"></link>
             
           </Head>
-          {
-            loading?
-            (
-              <div className={styles.loader}>
-              <ClipLoader
-              size={50} 
-              color={'#fff'} 
-              loading={loading}
-               
-            />
-            </div> 
-              )
-
-            :
+          
             
-            (<div>
+            
+            <div>
             <header style={{backgroundColor:on===false?'white':'rgba(0, 0, 0, 0.904)'}} className={styles.nav}>
               <img  className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/>
 
@@ -80,8 +86,16 @@ export default function Home() {
               />
               <button onClick={()=> router.push("/discover")} style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
             </header>
+
+            <Marquee  direction='right' children={null} gradientWidth={0} style={{display:"flex",position:'absolute',height:'40px', backgroundColor:on===false?'rgba(225,225,255,0.3)':'black',backdropFilter:blur(50),zIndex:2, paddingRight:10,paddingLeft:10}} >
+              {crypto.map(({name,price,market_cap})=>(
+                  <Crypto name={name} price={price} market_cap={market_cap}></Crypto>
+              ))}
+              
+            </Marquee>
+
             <picture className={styles.picture}>
-              <Image  objectFit='cover'  layout='intrinsic' objectPosition='50% 23%' width={700} height={360} src='/lukawhiteright.jpg' alt='lukamba'/>
+              <Image  objectFit='cover'  layout='intrinsic' objectPosition='30% 13%' width={700} height={360} src='/lukawhiteright.jpg' alt='lukamba' />
             </picture>
             <main style={{backgroundColor:on===false?'white':'black'}} className={styles.main}>
               
@@ -175,7 +189,7 @@ export default function Home() {
           </footer>
           </div>
           )
-          }
+          
               
       
       
