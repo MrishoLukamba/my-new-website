@@ -87,7 +87,7 @@ export default function Home() {
               <button onClick={()=> router.push("/discover")} style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
             </header>
 
-            <Marquee  direction='right' children={null} gradientWidth={0} style={{display:"flex",position:'absolute',height:'40px', backgroundColor:on===false?'rgba(225,225,255,0.3)':'black',backdropFilter:blur(50),zIndex:2, paddingRight:10,paddingLeft:10}} >
+            <Marquee  direction='right' children={null} gradientWidth={0} style={{display:"flex",position:'absolute',height:'40px', backgroundColor:on===false?'rgba(225,225,255,0.3)':'black',backdropFilter:"blur(50)",zIndex:2, paddingRight:10,paddingLeft:10}} >
               {crypto.map(({name,price,market_cap})=>(
                   <Crypto name={name} price={price} market_cap={market_cap}></Crypto>
               ))}
