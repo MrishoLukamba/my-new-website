@@ -1,0 +1,16 @@
+.cryptoDiv{
+    display: flex;
+    width: auto;
+    align-items: center;
+    flex-direction: row;
+    
+}
+.cryptoDiv >span{
+    font-size: 1em;
+    font-weight: 500px;
+    color:black;
+    padding-left:13px;
+    padding-left: 13px;
+    color:darkkhaki;
+
+}
