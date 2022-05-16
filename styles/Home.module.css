@@ -312,5 +312,13 @@
     padding-left: 0px;
     z-index: 2;
   }
+  .Name >h1 {
+    background-image:linear-gradient(45deg ,#351f4e,#070e1e, #473a84);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent; 
+    font-size: 1.5em;
+  }
  
 }
