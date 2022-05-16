@@ -27,6 +27,7 @@
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent; 
   font-size: 2.3em;
+  font-family: Roboto;
 }
 .Name >h4{
   background-image:linear-gradient(45deg ,#d3cfd6,#4b639c, #060217);
