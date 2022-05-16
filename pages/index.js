@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import {useState, useEffect} from 'react'
-import Image from 'next/image'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -9,21 +8,13 @@ import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Switch from '@material-ui/core/Switch';
-import ClipLoader from "react-spinners/ClipLoader";
-import Typist from 'react-typist';
-import Marquee from "react-fast-marquee";
+
 import axios from 'axios';
-import Crypto from '../Component/crypto';
+
 
 export default function Home() {
   const router = useRouter()
-  const [crypto, setCrypto] = useState([])
-  const [on, setOn] = useState(false);
   
-
-  const handleChange =()=>{
-    on?setOn(false) : setOn(true);
-  }
   
 
   
@@ -32,33 +23,13 @@ export default function Home() {
   const github = "https://github.com/MrishoLukamba/"
   const twitter = "https://twitter.com/LukambaMrisho"
   
-  const formatCash = n => {
-    if (n < 1e3) return n;
-    if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
-    if (n >= 1e6 && n < 1e9) return +(n / 1e6).toFixed(1) + "M";
-    if (n >= 1e9 && n < 1e12) return +(n / 1e9).toFixed(1) + "B";
-    if (n >= 1e12) return +(n / 1e12).toFixed(1) + "T";
-  };
+ 
 
  
 
- useEffect(() => {
-  async function getCrypto(prop){
-    axios.get(`https://api.lunarcrush.com/v2?data=assets&key=k9yd7nh8uanli0elxaemt&symbol=${prop}`).then((response) => {
-    const details = response.data.data[0]
-    const [symbol,price,mCap] = [details.symbol,details.price, details.market_cap]
-    const result = {name:symbol,price:(price).toFixed(2), market_cap:formatCash(mCap)};
-    setCrypto((prev)=>[...prev,result])
-    });
-  }
-  getCrypto("BTC")
-  getCrypto("DOT")
-  getCrypto("ETH")
-  getCrypto("ADA")
+ 
 
-  }, []);
-
-  console.log(crypto)
+  
   return (
 
          <div className={styles.homepage}>
@@ -76,43 +47,36 @@ export default function Home() {
             
             
             <div>
-            <header style={{backgroundColor:on===false?'white':'rgba(0, 0, 0, 0.904)'}} className={styles.nav}>
+            <header  className={styles.nav}>
               <img  className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/>
 
-              <Switch
-              onClick={handleChange}
-              color="primary"
-              inputProps={{ 'aria-label': 'secondary checkbox' }}
-              />
-              <button onClick={()=> router.push("/discover")} style={{color:on===false? 'rgb(1, 1, 26)':'white'}} className={styles.button}>Discover</button>
+             
+              <button onClick={()=> router.push("/discover")}  className={styles.button}>Discover</button>
             </header>
 
-            <Marquee  direction='right' children={null} gradientWidth={0} style={{display:"flex",position:'absolute',height:'40px', backgroundColor:on===false?'rgba(225,225,255,0.3)':'black',backdropFilter:"blur(50)",zIndex:2, paddingRight:10,paddingLeft:10}} >
-              {crypto.map(({name,price,market_cap})=>(
-                  <Crypto name={name} price={price} market_cap={market_cap}></Crypto>
-              ))}
-              
-            </Marquee>
+            
 
-            <picture className={styles.picture}>
-              <Image  objectFit='cover'  layout='intrinsic' objectPosition='30% 13%' width={700} height={360} src='/lukawhiteright.jpg' alt='lukamba' />
-            </picture>
-            <main style={{backgroundColor:on===false?'white':'black'}} className={styles.main}>
+            <div className={styles.Name}>
+              <h1>MRISHO LUKAMBA</h1>
+              <h4>Dive into the MindVerse</h4>
+            </div>
+
+
+            <main className={styles.main}>
               
               <section className={styles.brief}>
                   <div className={styles.mainIconDiv}>
-                    <img src='/webIcon.png' alt=''></img> 
+                    <img src='/math.png' alt=''></img> 
                   </div>
-                  
+          
                   <div className={styles.icondetails}>
-                    <Typist>
-                        <p>Building modern and responsive Web Application
-                          ranging from Portfolios, Directory and Contact pages,
-                          Online stores to E-commerce websites
+                         <h4>MATHEMATICS</h4>
+                        <p>Exploring mathematical proofs from number theory 
+                          and other maths fields
 
                         </p>
-                    </Typist>
-                  <button className={styles.buttonIcon}>Learn more</button>
+                    
+                  <button className={styles.buttonIcon}>Lets prove it</button>
                   </div>
               </section>
 
@@ -122,13 +86,14 @@ export default function Home() {
                   </div>
 
                   <div className={styles.icondetails}>
-                    <Typist>
-                        <p>Smart Contracts and Blockchain Technologies.
-                          Diving into Future. 
-
+                
+                        <h4>SUBSTRATE</h4>
+                        <p>
+                          Explaining and exploring FRAME runtime through articles and lab notes.
+                          And blockchain runtimes
                         </p>
-                  </Typist>
-                  <button className={styles.buttonIcon}>Learn more</button>
+                  
+                  <button onClick={()=> router.push("/substrate")} className={styles.buttonIcon}>Learn more</button>
                   </div>
               </section>
 
@@ -138,12 +103,11 @@ export default function Home() {
                   </div>
 
                   <div className={styles.icondetails}>
-                    <Typist>
-                        <p>Programming languages tutor, Data structures and Algorithm 
-                          in Python and Javascript.
-
+                        <h4>2.5 FOUNDATION</h4>
+                        <p>
+                          Collaborating with friends on various fields and writing our personal views.
                         </p>
-                  </Typist>
+                  
                   <button className={styles.buttonIcon}>Learn more</button>
                   </div>
               </section>
@@ -170,12 +134,7 @@ export default function Home() {
            </section>
            
               
-                <div className={styles.emailDiv}>
-                  <form>
-                    <input className={styles.inputEmail} placeholder='site in development..'></input>
-                    <button className={styles.emailBtn} type='submit'>Be Updated!</button>
-                  </form>
-                </div>
+               
                 
 
               
@@ -188,7 +147,7 @@ export default function Home() {
             </div>
           </footer>
           </div>
-          )
+          
           
               
       
