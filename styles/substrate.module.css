@@ -1,0 +1,128 @@
+
+.upperNav{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+    height:auto;
+    
+    
+}
+.upperNav >h2{
+    background-image:linear-gradient(45deg ,#d3cfd6,#4b639c, #060217);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent; 
+  font-size: 2em;
+  font-weight:400
+}
+.buttons {
+    width:50%;
+    height:50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 25px;
+}
+.button {
+    padding: 10px 20px;
+    color:rgb(13, 13, 45);
+    border:none;
+    cursor:pointer;
+    background-color:#f0edf1b0;
+    
+}
+
+.titles{
+    width:60%;
+    height: auto;
+    background-color: transparent;
+    padding:30px 20px;
+    margin-top:50px;
+    box-sizing:border-box;
+}
+.titles >div{
+    background-color:transparent;
+    width:100%;
+    height: 70px;
+    padding:10px 20px;
+}
+.titles> div >span{
+    color:#847da6c3
+}
+.titles>div>h3{
+    color:rgb(40, 40, 52);
+    font-weight:500;
+    cursor: pointer;
+}
+
+
+
+@media (max-width:1000px) {
+    .upperNav >h2{
+      font-size: 1.5em;
+      font-weight:400
+    }
+
+    .buttons {
+        width:100%;
+        height:50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top:50px;
+    }
+    .button {
+        padding: 5px 10px;
+        color:rgb(13, 13, 45);
+        border:none;
+        cursor:pointer;
+        background-color:#f0edf1b0;
+        
+    }
+
+    .titles{
+        width:100%;
+        height: auto;
+        background-color: transparent;
+        padding:10px 20px;
+        margin-top:50px;
+    }
+}
+
+@media (max-width:600px) {
+    .upperNav >h2{
+        font-size: 1.3em;
+        font-weight:400
+      }
+
+      .buttons {
+        width:100%;
+        height:50px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin-top:50px;
+    }
+    .button {
+        padding: 5px 10px;
+        color:rgb(13, 13, 45);
+        border:none;
+        cursor:pointer;
+        background-color:#f0edf1b0;
+        
+    }
+    .titles{
+        width:100%;
+        height: auto;
+        background-color: transparent;
+        padding:10px 20px;
+        margin-top:50px;
+    }
+    
+}

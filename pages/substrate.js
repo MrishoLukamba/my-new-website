@@ -1,8 +1,10 @@
 import React from 'react'
+import styles from '../styles/substrate.module.css'
+import Substrate from '../Component/Substrate'
 
 function substrate() {
   return (
-    <div>substrate</div>
+    <div><Substrate/></div>
   )
 }
 
