@@ -1,78 +1,49 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import { Client } from '@notionhq/client'
 import styles  from '../styles/substrate.module.css'
+import axios from "axios"
 
 
 
-export async function loadpage(){
-    const pageId = "bb93512719964604ad8165c4fd1e8ab8";
-    const response = await notion.blocks.children.list({
-        block_id: pageId,
-        
-    });
-    return response.results;
-}
-
-function Substrate() {
+export default function Substrate() {
 
     const[post, setPost] = useState([]);
-    const[title, setTitle] = useState([]);
+    const[title, setTitle] = useState();
 
-    useEffect(() =>{
-        retrievPages().then((data) => {
-            setPost(data)
-        }).catch(error =>{
-            console.log(error)
-        })
+    const instance = axios.create({
+        baseURL: `https://api.notion.com/v1`,
+        headers: {"Authorization":"secret_Is4dOLDuemVvfqwHK4bkLIPMmeVBp9nBrY1i3jkYRGQ",
+                    "Notion-Version":"2022-02-22",
+                    "Accept":"/",
+                    "Access-Control-Allow-Origin": "*"
+        }
+    })
+    
+    {/*instance.get("/pages/ec908904cc174918acdc6c502c0461a6")
+            .then(response => {
+                console.log(response.data.properties.title.title)
+            }).catch(error => console.log(error))
+        */}
+    instance.get("/blocks/ec908904cc174918acdc6c502c0461a6/children")
+            .then(response => {
+                console.log(response.data.results[0]?.child_page.title)
+            }).catch(error => console.log(error))
 
-        
-    },[])
-    const notion = new Client({
-        auth: "secret_Is4dOLDuemVvfqwHK4bkLIPMmeVBp9nBrY1i3jkYRGQ"
-    });
+   
     
-   const retrievPages = async()=>{
-        const pageId = '68fc25f81d9a437081f5ec47f481f9b8';
-        const response = await notion.blocks.children.list({
-            block_id: pageId,
-            page_size: 100,
-          });
-        return response.results;
-    
-    } 
-
-    const subTitles = async () =>{
-        const pageId = "ec908904cc174918acdc6c502c0461a6";
-        const response = await notion.blocks.children.list({
-            block_id: pageId,
-            page_size: 100,
-        });
-        setTitle(response.results)
-    }
-    const handeClick = () =>{
-        subTitles()
-    }
-    const pageClick = () => {
-        subpage()
-    }
-    
-    
-
-    
-console.log(title?.[1]?.created_time)
+//console.log(title)
   return (
      <div className={styles.upperNav}>
          <h2>SUBSTRATE</h2>
          <div className={styles.buttons}>
-             <button onClick={handeClick} className={styles.button}>{post?.[1]?.child_page.title}</button>
-             <button className={styles.button}>{post?.[2]?.child_page.title}</button>
+             <button  className={styles.button}></button>
+             <button className={styles.button}></button>
          </div>
 
          <div className={styles.titles}>
              <div>
-                <span>{title?.[1]?.created_time}</span>
-                <h3 onClick={pageClick}>{title?.[1]?.child_page.title}</h3>
+                <span></span>
+                <h3 ></h3>
              </div>
              
 
@@ -81,6 +52,6 @@ console.log(title?.[1]?.created_time)
      </div>
 
   )
-}
 
-export default Substrate;
+  }
+

@@ -57,7 +57,7 @@ export default function Home() {
             
 
             <div className={styles.Name}>
-              <h1>MRISHO LUKAMBA</h1>
+              <h1>Mrisho Lukamba</h1>
               <h4>Dive into the MindVerse</h4>
             </div>
 
