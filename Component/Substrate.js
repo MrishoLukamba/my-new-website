@@ -1,7 +1,7 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
 import styles  from '../styles/substrate.module.css'
-import axios from "axios"
+import axios from 'axios'
 
 
 
@@ -11,22 +11,13 @@ export default function Substrate() {
     const[title, setTitle] = useState();
 
     const instance = axios.create({
-        baseURL: `https://api.notion.com/v1`,
-        headers: {"Authorization":"secret_Is4dOLDuemVvfqwHK4bkLIPMmeVBp9nBrY1i3jkYRGQ",
-                    "Notion-Version":"2022-02-22",
-                    "Accept":"/",
-                    "Access-Control-Allow-Origin": "*"
-        }
+        baseURL: `localhost:8000`
     })
     
-    {/*instance.get("/pages/ec908904cc174918acdc6c502c0461a6")
+  
+    instance.get("/mama")
             .then(response => {
-                console.log(response.data.properties.title.title)
-            }).catch(error => console.log(error))
-        */}
-    instance.get("/blocks/ec908904cc174918acdc6c502c0461a6/children")
-            .then(response => {
-                console.log(response.data.results[0]?.child_page.title)
+                console.log(response)
             }).catch(error => console.log(error))
 
    
