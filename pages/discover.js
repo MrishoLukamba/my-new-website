@@ -1,15 +1,12 @@
 import React from 'react'
-import { useRouter } from 'next/router'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/article.module.css'
 
 function discover() {
-    const router = useRouter();
+    
     return (
-        <div className={styles.homepage}>
-        <header  className={styles.nav}>
-            <img onClick={()=> router.push("/")} className={styles.img} src='/myLogo.png' alt='LUKAQUANTUM'/>
-
-      </header>
+        <div className={styles.discover}>
+            <h3> Expect Chaos</h3>
+            <h5>Any updates will be here</h5>
         </div>
     )
 }

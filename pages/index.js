@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import {useState, useEffect} from 'react'
 import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -7,9 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 import GitHubIcon from '@material-ui/icons/GitHub';
-import Switch from '@material-ui/core/Switch';
-
-import axios from 'axios';
 
 
 export default function Home() {
