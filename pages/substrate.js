@@ -32,9 +32,12 @@ console.log(title[0])
     const format = (string) =>{
         return string.split("T")[0]
     }
+    const urlBeauty = (string) =>{
+        return string.replaceAll(" ","-")
+    }
 
    
-console.log(value.state.article)
+
 
   return (
      <div className={styles.upperNav}>
@@ -51,7 +54,7 @@ console.log(value.state.article)
                 <div key={name.id}>
                     <span>{format(name.created_time)}</span>
                     <span>Last edited: {format(name.last_edited_time)}</span>
-                    <Link href={`/substrate/${name.child_page.title}`}>
+                    <Link href={`/substrate/${urlBeauty(name.child_page.title)}`}>
                       <h3 onClick={()=> getPage(name.id)}>{name.child_page.title}</h3>
                     </Link>
                </div>
