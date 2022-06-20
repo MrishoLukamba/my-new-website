@@ -55,7 +55,7 @@
 .button{
   padding: 3px 16px;
   outline-width: 0;
-  border: 1.5px solid red;
+  border: 1.5px solid rgb(8, 14, 40);
   background: transparent;
   color: rgb(1, 1, 26);
   font-size: 1em;
