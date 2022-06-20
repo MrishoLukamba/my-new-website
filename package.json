@@ -1,7 +1,7 @@
 {
   "name": "Mrisho-Lukamba",
   "version": "0.1.0",
-  "private": true,
+  
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,17 +11,11 @@
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "axios": "^0.21.4",
-    "dgram": "^1.0.1",
-    "dns": "^0.2.2",
     "dotenv": "^16.0.1",
-    "fs": "^0.0.1-security",
-    "http2": "^3.3.7",
-    "net": "^1.0.2",
     "next": "^11.0.1",
     "notion-client": "^6.12.9",
     "react": "^17.0.2",
-    "react-dom": "17.0.2",
-    "react-fast-marquee": "^1.2.1",
-    "tls": "^0.0.1"
+    "react-dom": "17.0.2"
+    
   }
 }

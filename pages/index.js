@@ -58,12 +58,29 @@ export default function Home() {
 
             <div className={styles.Name}>
               <h1>Mrisho Lukamba</h1>
-              <h4>Dive into the MindVerse</h4>
+             
             </div>
 
 
             <main className={styles.main}>
               
+            <section className={styles.brief}>
+                  <div className={styles.mainIconDiv}>
+                    <img src='/blockchain.png' alt=''></img> 
+                  </div>
+
+                  <div className={styles.icondetails}>
+                
+                        <h4>SUBSTRATE</h4>
+                        <p>
+                          Explaining and exploring FRAME runtime through articles and lab notes.
+                          And blockchain runtimes
+                        </p>
+                  
+                  <button onClick={()=> router.push("/substrate")} className={styles.buttonIcon}>Learn more</button>
+                  </div>
+              </section>
+
               <section className={styles.brief}>
                   <div className={styles.mainIconDiv}>
                     <img src='/math.png' alt=''></img> 
@@ -80,22 +97,7 @@ export default function Home() {
                   </div>
               </section>
 
-              <section className={styles.brief}>
-                  <div className={styles.mainIconDiv}>
-                    <img src='/blockchain.png' alt=''></img> 
-                  </div>
-
-                  <div className={styles.icondetails}>
-                
-                        <h4>SUBSTRATE</h4>
-                        <p>
-                          Explaining and exploring FRAME runtime through articles and lab notes.
-                          And blockchain runtimes
-                        </p>
-                  
-                  <button onClick={()=> router.push("/substrate")} className={styles.buttonIcon}>Learn more</button>
-                  </div>
-              </section>
+              
 
               <section className={styles.brief}>
                   <div className={styles.mainIconDiv}>
@@ -143,7 +145,7 @@ export default function Home() {
 
             <div className={styles.footerfoot}>
                
-                <span>© 2021 Mrisho Lukamba</span>
+                <span>© 2022 Mrisho Haji Lukamba</span>
             </div>
           </footer>
           </div>
