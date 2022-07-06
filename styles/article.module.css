@@ -42,6 +42,8 @@
 .image{
     width:100%;
     height: auto;
+    margin-top: 20px;
+    margin-bottom:20px
 }
 .code{
     color:rgb(63, 15, 15);
@@ -49,6 +51,8 @@
 }
 .divider {
     width: 100%;
+    margin-top:10px;
+    margin-bottom:10px;
     border-bottom: 3px solid rgba(44, 40, 77, 0.116);
 }
 @media (max-width:1000px) {
