@@ -7,24 +7,27 @@ import Link from'next/link'
 
 
 export default function Substrate() {
-    const value =useContext(AppContext)
-    const[post, setPost] = useState([]);
+    const value = useContext(AppContext)
     const[title, setTitle] = useState([]);
 
    
   
     useEffect(() => {
+        fetched()
+    },[])
+
+    const fetched =()=>{
         instance.get("/sub-in-rust/")
             .then(response => {
                 setTitle(response.data)
             }).catch(error => console.log(error))
-    },[])
-console.log(title[0])
+    }
     //fetching articles 
     const getPage =(id)=>{
         instance.get(`/sub-in-rust/${id}`)
         .then(response => {
             value.setPage(response.data)
+            console.log(response.data)
         }).catch(error => console.log(error))
     }
    
@@ -41,9 +44,9 @@ console.log(title[0])
 
   return (
      <div className={styles.upperNav}>
-         <h2>SUBSTRATE</h2>
+         <h2>SUBSTRATE & RUNTIMES</h2>
          <div className={styles.buttons}>
-             <button  className={styles.button}>SUB-IN-RUST</button>
+             <button onClick={fetched}  className={styles.button}>SUB-IN-RUST</button>
              <button className={styles.button}>ARTICLES</button>
          </div>
 
@@ -54,7 +57,7 @@ console.log(title[0])
                 <div key={name.id}>
                     <span>{format(name.created_time)}</span>
                     <span>Last edited: {format(name.last_edited_time)}</span>
-                    <Link href={`/substrate/${urlBeauty(name.child_page.title)}`}>
+                    <Link href={`/substrate/${urlBeauty(name.child_page.title)}/${name.id}`}>
                       <h3 onClick={()=> getPage(name.id)}>{name.child_page.title}</h3>
                     </Link>
                </div>

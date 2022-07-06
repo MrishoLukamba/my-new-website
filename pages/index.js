@@ -15,7 +15,6 @@ export default function Home() {
 
   
   const linkedin = "https://www.linkedin.com/in/mrisho-lukamba-20ba841b6/"
-  const ig= "https://www.instagram.com/mrisholukamba/"
   const github = "https://github.com/MrishoLukamba/"
   const twitter = "https://twitter.com/LukambaMrisho"
   
@@ -31,7 +30,8 @@ export default function Home() {
          <div className={styles.homepage}>
           <Head>
             <title>Mrisho Lukamba</title>
-            <meta name='keyword' content='blockchain, web developer, investor, portfolio'></meta>
+    
+            <meta name='keyword' content='Blockchain,Polkadot,Runtime,Cosmos,Smart Contracts,Ethereum,Substrate,Rust, Mathematics'></meta>
         
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></link>
@@ -54,6 +54,13 @@ export default function Home() {
 
             <div className={styles.Name}>
               <h1>Mrisho Lukamba</h1>
+              <div className={styles.icons}>
+                        <a target="_blank" href={linkedin}><IconButton><LinkedInIcon style={{color:"#333333", fontSize:20}}/></IconButton></a>
+                        <a target="_blank" href={twitter}><IconButton><TwitterIcon style={{color:"#333333", fontSize:20}}/></IconButton></a>
+                        <a target="_blank" href={github}><IconButton><GitHubIcon style={{color:"#333333", fontSize:20}}/></IconButton></a>
+                                                
+              </div>
+
              
             </div>
 
@@ -114,18 +121,11 @@ export default function Home() {
             <footer  className={styles.footer}>
             
            <section className={styles.footerContent1}>
-                <div className={styles.icons}>
-                        <a target="_blank" href={linkedin}><IconButton><LinkedInIcon style={{color:"white", fontSize:20}}/></IconButton></a>
-                        <a target="_blank" href={twitter}><IconButton><TwitterIcon style={{color:"white", fontSize:20}}/></IconButton></a>
-                        <a target="_blank" href={github}><IconButton><GitHubIcon style={{color:"white", fontSize:20}}/></IconButton></a>
-                        
-                        <a target="_blank" href={ig}><IconButton><InstagramIcon style={{color:"white", fontSize:20}}/></IconButton></a>
-                        
-                  </div>
+                
 
                   <div className={styles.partner}>
                 
-                    <span>Visit Tanzania</span>
+                    <span>Visit Tanzania 🛫</span>
                     <a href="https://www.marblestours.co.tz/" target="_blank">MARBLESTOURS AND SAFARI</a>
                 
                   </div>

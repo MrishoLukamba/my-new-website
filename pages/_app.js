@@ -4,7 +4,7 @@ import {useState} from 'react';
 
 function MyApp({ Component, pageProps }) {
   const [pages, setPage] = useState([])
-  
+ 
   return (
     <AppContext.Provider
         value={{

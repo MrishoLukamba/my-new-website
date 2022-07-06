@@ -6,18 +6,18 @@
     align-items: center;
     width:100%;
     height:auto;
-    
+    margin-top: 50px;
     
 }
 .upperNav >h2{
     background-image:linear-gradient(45deg ,#090a19,#020d19, #060217);
   -webkit-background-clip: text;
-  opacity: 0.7;
+  opacity: 0.8;
   -moz-background-clip: text;
   -webkit-text-fill-color: transparent; 
   -moz-text-fill-color: transparent; 
   font-size: 2em;
-  font-weight:400
+  font-weight:bolder;
 }
 .buttons {
     width:50%;
@@ -73,7 +73,7 @@
 @media (max-width:1000px) {
     .upperNav >h2{
       font-size: 1.5em;
-      font-weight:400
+      font-weight:700
     }
     
 
@@ -124,7 +124,7 @@
 @media (max-width:600px) {
     .upperNav >h2{
         font-size: 1.3em;
-        font-weight:400
+        font-weight:700
       }
       
       .titles>div>h3{

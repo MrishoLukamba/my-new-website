@@ -2,13 +2,20 @@ import React from 'react'
 import {useState, useEffect,useContext} from 'react'
 import AppContext from '../../Component/AppContext'
 import styles from '../../styles/article.module.css'
+import {useRouter} from 'next/router'
 
 
 function subpage() {
-  const [page, setPage] = useState()
+  const [article, setArticle] = useState()
   const value =useContext(AppContext)
-  
-console.log(value.state?.article[7]?.paragraph.rich_text[0].annotations)
+  const router = useRouter()
+  const {page} = router.query
+  const [id, setId] = useState()
+
+  useEffect(()=>{
+    setId(page)
+  },[])
+console.log(id)
   return (
     <div className={styles.DivPage}>
      
