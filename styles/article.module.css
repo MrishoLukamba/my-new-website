@@ -68,6 +68,8 @@
     .image{
         width:100%;
         height: auto;
+        margin-top: 20px;
+        margin-bottom:20px
     }
     .DivPage >h3{
         color:rgb(51, 53, 53);
@@ -109,5 +111,7 @@
     .image{
         width:100%;
         height: auto;
+        margin-top: 20px;
+        margin-bottom:20px
     }
 }
