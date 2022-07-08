@@ -30,7 +30,7 @@ export default function Home() {
          <div className={styles.homepage}>
           <Head>
             <title>Mrisho Lukamba</title>
-    
+            <img src='/myLogo.png'/>
             <meta name='keyword' content='Blockchain,Polkadot,Runtime,Cosmos,Smart Contracts,Ethereum,Substrate,Rust, Mathematics'></meta>
         
             <link rel="preconnect" href="https://fonts.gstatic.com"/>

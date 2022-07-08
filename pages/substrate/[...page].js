@@ -12,10 +12,7 @@ function subpage() {
   const {page} = router.query
   const [id, setId] = useState()
 
-  useEffect(()=>{
-    setId(page)
-  },[])
-console.log(id)
+  
   return (
     <div className={styles.DivPage}>
      
