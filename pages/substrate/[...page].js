@@ -2,17 +2,27 @@ import React from 'react'
 import {useState, useEffect,useContext} from 'react'
 import AppContext from '../../Component/AppContext'
 import styles from '../../styles/article.module.css'
-import {useRouter} from 'next/router'
+import instance from '../../Component/Axios'
 
 
 function subpage() {
-  const [article, setArticle] = useState()
   const value =useContext(AppContext)
-  const router = useRouter()
-  const {page} = router.query
-  const [id, setId] = useState()
-
   
+  useEffect(() => {
+    updatedfetch()
+  },[])
+
+  const updatedfetch =()=>{
+    instance.get(`/sub-in-rust/page`)
+    .then(response => {
+        value.setPage(response.data)
+    }).catch(error => {(<div>
+        <h3>{error}</h3>
+    </div>)})
+  }
+  
+
+  console.log(value.state.article)
   return (
     <div className={styles.DivPage}>
      

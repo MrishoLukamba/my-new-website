@@ -30,9 +30,14 @@ export default function Home() {
          <div className={styles.homepage}>
           <Head>
             <title>Mrisho Lukamba</title>
-            <img src='/myLogo.png'/>
-            <meta name='keyword' content='Blockchain,Polkadot,Runtime,Cosmos,Smart Contracts,Ethereum,Substrate,Rust, Mathematics'></meta>
+            
+            <meta name="description" content="Blockchain runtime on substrate"></meta>
+            <meta name="description" content="Terence Tao analysis"></meta>
+            <meta name="description" content="Substrate tutorials"></meta>
+            <meta name='keywords' content='Blockchain,Polkadot,Runtime,Cosmos,Smart Contracts,Ethereum,Substrate,Rust, Mathematics'></meta>
         
+            <meta name="author" content="Mrisho Lukamba"></meta>
+
             <link rel="preconnect" href="https://fonts.gstatic.com"/>
             <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet"></link>
             <link rel="preconnect" href="https://fonts.gstatic.com"/>

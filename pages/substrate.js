@@ -22,13 +22,14 @@ export default function Substrate() {
                 setTitle(response.data)
             }).catch(error => console.log(error))
     }
+
     //fetching articles 
     const getPage =(id)=>{
-        instance.get(`/sub-in-rust/${id}`)
+        instance.get(`/sub-in-rust/page/${id}`)
         .then(response => {
             value.setPage(response.data)
-            console.log(response.data)
         }).catch(error => console.log(error))
+
     }
    
     //formating data return from notion Api
@@ -57,8 +58,8 @@ export default function Substrate() {
                 <div key={name.id}>
                     <span>{format(name.created_time)}</span>
                     <span>Last edited: {format(name.last_edited_time)}</span>
-                    <Link href={`/substrate/${urlBeauty(name.child_page.title)}/${name.id}`}>
-                      <h3 onClick={()=> getPage(name.id)}>{name.child_page.title}</h3>
+                    <Link href={`/substrate/${urlBeauty(name.child_page.title)}`}>
+                      <h3 onClick={getPage(name.id)}>{name.child_page.title}</h3>
                     </Link>
                </div>
             ))}
